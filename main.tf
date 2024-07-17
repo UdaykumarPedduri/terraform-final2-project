@@ -95,15 +95,15 @@ resource "aws_security_group" "sg" {
   }
 }
 
-resource "aws_s3_bucket" "s3" {
+resource "aws_s3_bucket" "s3uday" {
   bucket = "terraformprojects3bucket"
 }
 
-resource "aws_iam_user" "iamuser" {
+resource "aws_iam_user" "iamuseruday" {
   name = "terraiamuser"
 }
 
-resource "aws_ebs_volume" "vol" {
+resource "aws_ebs_volume" "voluday" {
   availability_zone = "ap-south-1b"
   size              = 40
   tags = {
