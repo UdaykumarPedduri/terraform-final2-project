@@ -7,7 +7,7 @@ provider "aws" {
 resource "aws_instance" "webserver-one" {
   ami                    = "ami-01fccab91b456acc2"
   instance_type          = "t2.micro"
-  keyname                = "jenkins_pra"
+  key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
   availability_zone      = "ap-south-1a"
 
