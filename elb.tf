@@ -1,6 +1,6 @@
 resource "aws_elb" "bar" {
   name              = "uday-terraform-elb"
-  availability_zone = ["ap-south-1a", "ap-south-1b"]
+  availability_zones = ["ap-south-1a", "ap-south-1b"]
 
   listener {
     instance_port     = 80
