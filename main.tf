@@ -96,7 +96,7 @@ resource "aws_security_group" "sg" {
 }
 
 resource "aws_s3_bucket" "s3" {
-  name = "terraformprojects3bucket"
+  bucket = "terraformprojects3bucket"
 }
 
 resource "aws_iam_user" "iamuser" {
