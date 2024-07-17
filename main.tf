@@ -94,11 +94,11 @@ resource "aws_security_group" "sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
+/*
 resource "aws_s3_bucket" "s3uday" {
   bucket = "terra7788projects3bucket"
 }
-
+*/
 resource "aws_iam_user" "iamuseruday" {
   name = "terraiamuser"
 }
