@@ -29,7 +29,7 @@ EOF
 resource "aws_instance" "webserver-two" {
   ami                    = "ami-01fccab91b456acc2"
   instance_type          = "t2.micro"
-  keyname                = "jenkins_pra"
+  key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
   availability_zone      = "ap-south-1b"
 
@@ -51,7 +51,7 @@ EOF
 resource "aws_instance" "appserver-one" {
   ami                    = "ami-01fccab91b456acc2"
   instance_type          = "t2.micro"
-  keyname                = "jenkins_pra"
+  key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
   availability_zone      = "ap-south-1a"
   tags = {
@@ -62,7 +62,7 @@ resource "aws_instance" "appserver-one" {
 resource "aws_instance" "appserver-two" {
   ami                    = "ami-01fccab91b456acc2"
   instance_type          = "t2.micro"
-  keyname                = "jenkins_pra"
+  key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
   availability_zone      = "ap-south-1b"
   tags = {
