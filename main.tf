@@ -1,15 +1,15 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
   access_key = "AKIAZI2LD3XR6K6JW6CF"
   secret_key = "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"
 }
 
 resource "aws_instance" "webserver-one" {
-  ami                    = "ami-01fccab91b456acc2"
+  ami                    = "ami-036c2987dfef867fb"
   instance_type          = "t2.micro"
   key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
-  availability_zone      = "ap-south-1a"
+  availability_zone      = "us-east-1"
 
 
   user_data = <<EOF
@@ -27,11 +27,11 @@ EOF
 }
 
 resource "aws_instance" "webserver-two" {
-  ami                    = "ami-01fccab91b456acc2"
+  ami                    = "ami-0ad21ae1d0696ad58"
   instance_type          = "t2.micro"
   key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
-  availability_zone      = "ap-south-1b"
+  availability_zone      = "ap-south-1"
 
 
   user_data = <<EOF
@@ -49,22 +49,22 @@ EOF
 }
 
 resource "aws_instance" "appserver-one" {
-  ami                    = "ami-01fccab91b456acc2"
+  ami                    = "ami-036c2987dfef867fb"
   instance_type          = "t2.micro"
   key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
-  availability_zone      = "ap-south-1a"
+  availability_zone      = "us-east-1"
   tags = {
     name = "terraform-appserver-1"
   }
 }
 
 resource "aws_instance" "appserver-two" {
-  ami                    = "ami-01fccab91b456acc2"
+  ami                    = "ami-0ad21ae1d0696ad58"
   instance_type          = "t2.micro"
   key_name                = "jenkins_pra"
   vpc_security_group_ids = [aws_security_group.sg.id]
-  availability_zone      = "ap-south-1b"
+  availability_zone      = "ap-south-1"
   tags = {
     name = "terraform-appserver-2"
   }
